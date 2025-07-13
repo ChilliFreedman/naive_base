@@ -4,6 +4,7 @@ from basic_modul import Basic_modul
 from data_classifier import Classifier
 from user_data import Getuser
 from tester import Test
+import os
 class Maneser:
     def __init__(self):
         self.loder = None
@@ -15,7 +16,20 @@ class Maneser:
     #@staticmethod
     def raner(self):
 
-        loder = Csv_to_df(r'C:\PycharmProjects\PycharmProjects\naive_base\data\mushroom.csv')
+        list_files = os.listdir(r'C:\PycharmProjects\PycharmProjects\naive_base\data')
+        for i in range(len(list_files)):
+            print(f"for file {list_files[i]} enter {i + 1}")
+        while True:
+            choise = int(input(f"enter 1 -- {len(list_files)}\n"))
+            if choise > 0 and choise <= len(list_files):
+                break
+        try:
+            file_choise = list_files[choise - 1]
+        except IndexError:
+            print("not aloud choise")
+
+        loder = Csv_to_df(f'data/{file_choise}' )
+        #loder = Csv_to_df(r'C:\PycharmProjects\PycharmProjects\naive_base\data\buy_computer_data.csv')
         self.df = loder.csv_to_df()
         self.big = loder.big_part_of_df()
         self.small = loder.small_part_of_df()
