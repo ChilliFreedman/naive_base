@@ -1,7 +1,7 @@
 
-from basic_modul import Basic_modul
-from csv_to_df import Csv_to_df
-basic_mod  = Basic_modul()
+#from basic_modul import Basic_modul
+#from csv_to_df import Csv_to_df
+#basic_mod  = Basic_modul()
 #print(func_dict('buy_computer_data.csv'))
 class Getuser:
     @staticmethod

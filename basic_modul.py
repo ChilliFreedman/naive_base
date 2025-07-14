@@ -6,7 +6,7 @@ class Basic_modul:
         self.dict_model = {}
         self.dict_priors  = {}
     # טוען את הנתונים
-    def func_dict(self,df):
+    def func_dict(self,df,all_df):
         #df = pd.read_csv(csv)
 
         # עמודת היעד
@@ -32,7 +32,7 @@ class Basic_modul:
             for col in df.columns[:-1]:
 
                 # ערכים ייחודיים בעמודה זו
-                unique_vals = df[col].unique()
+                unique_vals = all_df[col].unique()
                 #מקבל את כמות השורות של כל טבלה שמחולקת לפי הערכים בעמודה האחרונה ומוסיף את כמות הערכים של כל עמודה לפי מה שיש לה
                 total = len(subset) + len(unique_vals)
                 # מאותחל ב-1 +  כמות הפעמים שמופיע ומחולק במספר השורות פלוס מספר הערכים שכל עמודה משתנה בפני עצמה (Laplace smoothing)
@@ -43,6 +43,8 @@ class Basic_modul:
 
             result[val] = inner_dict
             self.dict_model = result
+        # print(self.dict_priors)
+        # print(self.dict_model)
         return result
         # הדפסת התוצאה
         # import pprint

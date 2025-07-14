@@ -33,5 +33,5 @@ class Test:
             else:
                 not_corect += 1
             num += 1
-        return correct / total * 100
+        return f"The test is raigt with {correct / total * 100}%"
 

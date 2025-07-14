@@ -41,7 +41,7 @@ class Maneser:
         # print(small)
         basic_mod = Basic_modul()
         #basic_mod.func_dict(df)
-        basic_mod.func_dict(self.big)
+        basic_mod.func_dict(self.big,self.df)
         #basic_mod.func_dict(small)
 
         self.dict_model = basic_mod.dict_model
@@ -53,8 +53,8 @@ class Maneser:
 
 
         dict_user = Getuser.get_dict_col_value(self.dict_model)
-        classifier = Classifier()
-        print(classifier.classifier_data(dict_user,self.dict_model,self.dict_priors))
+        #classifier = Classifier()
+        print(Classifier.classifier_data(dict_user,self.dict_model,self.dict_priors))
 
 
 
