@@ -16,7 +16,7 @@ class Maneser:
     #@staticmethod
     def raner(self):
 
-        list_files = os.listdir(r'C:\PycharmProjects\PycharmProjects\naive_base\data')
+        list_files = os.listdir(r'.\data')
         for i in range(len(list_files)):
             print(f"for file {list_files[i]} enter {i + 1}")
         while True:

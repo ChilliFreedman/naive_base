@@ -13,7 +13,7 @@ class Test:
 
         correct = 0
         not_corect = 0
-        num = 0
+        #num = 0
         total = len(small_df)
         target_col = small_df.columns[-1]
         for _, row in small_df.iterrows():
@@ -32,6 +32,6 @@ class Test:
                 correct += 1
             else:
                 not_corect += 1
-            num += 1
+            #num += 1
         return f"The test is raigt with {correct / total * 100}%"
 
