@@ -8,12 +8,15 @@ class Csv_to_df:
 
 
     def csv_to_df(self):
+
         df = pd.read_csv(self.csv_file)
 
         for col in df.columns:
             if df[col].dtype == 'bool':
                 df[col] = df[col].astype('str')
         return df
+
+
 
     def big_part_of_df(self):
         df = self.csv_to_df()

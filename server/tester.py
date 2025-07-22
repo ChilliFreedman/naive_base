@@ -27,11 +27,14 @@ class Test:
             # print(f"correct {correct}")
             # print(f"not_corect{not_corect}")
 
+            # print(f"corect {corect_tar_val}")
+            # print(f"class {Classifier.classifier_data(dict_row,dict_mod,dict_priors)}")
+            if Classifier.classifier_data(dict_row,dict_mod,dict_priors)["class"] == corect_tar_val:
 
-            if Classifier.classifier_data(dict_row,dict_mod,dict_priors) == corect_tar_val:
                 correct += 1
             else:
                 not_corect += 1
             #num += 1
-        return f"The test is raigt with {correct / total * 100}%"
+        #return f"The test is raigt with {correct / total * 100}%"#
+        return correct / total * 100
 

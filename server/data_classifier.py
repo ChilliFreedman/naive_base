@@ -5,8 +5,7 @@ class Classifier:
     def classifier_data(dictionary_choice,dictionary_basic_mod,dictionary_priors):
         num = 0
         dict_result = dictionary_priors.copy()
-        # print("asdf dfff ghh hhjj ")
-        # print(dict_result)
+
         #ריצה על מילון הבחירה
         for key_basic, value_basic in dictionary_basic_mod.items():
             for key_choice, value_choice in dictionary_choice.items():
@@ -23,7 +22,12 @@ class Classifier:
 
         #print(dictionary_choice)
         print(dict_result)
-        return max(dict_result,key=dict_result.get)
+        target = max(dict_result,key=dict_result.get)
+
+        return {
+            "result":dict_result,
+            "class": target,
+        }
 
 
 
