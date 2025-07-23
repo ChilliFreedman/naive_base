@@ -63,13 +63,14 @@ class Client:
                 except IndexError:
                     print("not aloud choise")
 
-            #print(dict_choise)
+            print(dict_choise)
             self.dict_choise = dict_choise
             return
 
     def clas(self):
-        dict_str = json.dumps(self.dict_choise)
-        response = requests.get(f"http://localhost:8001/clas?dict_choise={dict_str}")
+        #dict_str = json.dumps(self.dict_choise)
+        response = requests.post("http://localhost:8001/clas", json=self.dict_choise)
+        #response = requests.get(f"http://localhost:8001/clas?dict_choise={dict_str}")
         anser_json = response.json()
         anser_dict = anser_json["anser"]["result"]
         anser = anser_json["anser"]["class"]

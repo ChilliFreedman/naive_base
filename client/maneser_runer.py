@@ -1,4 +1,4 @@
-from cliantmaneser import Client
+from client.cliantmaneser import Client
 
 
 

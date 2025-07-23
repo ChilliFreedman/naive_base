@@ -1,9 +1,9 @@
-from csv_to_df import Csv_to_df
-from  cliner import Cliner
-from basic_modul import Basic_modul
-from data_classifier import Classifier
-from user_data import Getuser
-from tester import Test
+from server.csv_to_df import Csv_to_df
+#from  cliner import Cliner
+from server.basic_modul import Basic_modul
+from server.data_classifier import Classifier
+
+from server.tester import Test
 import os
 class Maneser:
     def __init__(self):
@@ -24,13 +24,23 @@ class Maneser:
         return files
     def create_df(self,file):
         try:
-            loder = Csv_to_df(f'../data/{file}')
+            path = os.path.abspath(f'./data/{file}')
+            #print(f"Trying to read: {path}")
+
+            loder = Csv_to_df(path)
+
             self.df = loder.csv_to_df()
+            #print("DataFrame loaded successfully:")
+            #print(self.df.head())
+            #loder = Csv_to_df(f'../data/{file}')
+            #self.df = loder.csv_to_df()
             self.big = loder.big_part_of_df()
             self.small = loder.small_part_of_df()
             return self.df
         except Exception as a:
-            return a
+            #return a
+            print(f"Error in create_df: {a}")
+            raise
 
     def run_model(self):
         try:
@@ -40,6 +50,7 @@ class Maneser:
             self.dict_priors = basic_mod.dict_priors
         except Exception as a:
             return a
+
 
 
     def run_tester(self):

@@ -1,8 +1,8 @@
 import pandas
-from data_classifier import Classifier
+from server.data_classifier import Classifier
 #from main import Maneser
 
-from csv_to_df import Csv_to_df
+#from csv_to_df import Csv_to_df
 #classifier:Classifier,small_df:pandas.DataFrame
 class Test:
     @staticmethod
