@@ -1,9 +1,9 @@
-from server.csv_to_df import Csv_to_df
+from model_server.csv_to_df import Csv_to_df
 #from  cliner import Cliner
-from server.basic_modul import Basic_modul
-from server.data_classifier import Classifier
+from model_server.basic_modul import Basic_modul
+#from model_server.test_classifier import Classifier
 
-from server.tester import Test
+from model_server.tester import Test
 import os
 class Maneser:
     def __init__(self):
@@ -32,8 +32,6 @@ class Maneser:
             self.df = loder.csv_to_df()
             #print("DataFrame loaded successfully:")
             #print(self.df.head())
-            #loder = Csv_to_df(f'../data/{file}')
-            #self.df = loder.csv_to_df()
             self.big = loder.big_part_of_df()
             self.small = loder.small_part_of_df()
             return self.df
@@ -56,6 +54,6 @@ class Maneser:
     def run_tester(self):
         return Test.Check_30_70(self.small, self.dict_model, self.dict_priors)
 
-    def get_from_user(self,dict_user):
-        return Classifier.classifier_data(dict_user, self.dict_model, self.dict_priors)
+    # def get_from_user(self,dict_user):
+    #     return Classifier.classifier_data(dict_user, self.dict_model, self.dict_priors)
 

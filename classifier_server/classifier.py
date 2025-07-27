@@ -1,6 +1,4 @@
-
-#from basic_modul import Basic_modul
-class Classifier:
+class Classifierrr:
     @staticmethod
     def classifier_data(dictionary_choice,dictionary_basic_mod,dictionary_priors):
         num = 0
@@ -28,7 +26,3 @@ class Classifier:
             "result":dict_result,
             "class": target,
         }
-
-
-
-

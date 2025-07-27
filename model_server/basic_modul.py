@@ -46,14 +46,3 @@ class Basic_modul:
         # print(self.dict_priors)
         # print(self.dict_model)
         return result
-        # הדפסת התוצאה
-        # import pprint
-        #
-        # pprint.pprint(result, width=120)
-# if __name__ == "__main__":
-#     a = Basic_modul()
-#
-#     aaa = a.func_dict()
-#     for k, v in aaa.items():
-#         print(k, v)
-#     print(a.dict)

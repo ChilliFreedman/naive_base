@@ -1,5 +1,5 @@
-import pandas
-from server.data_classifier import Classifier
+#import pandas
+from model_server.test_classifier import Classifier
 #from main import Maneser
 
 #from csv_to_df import Csv_to_df

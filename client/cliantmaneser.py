@@ -35,7 +35,7 @@ class Client:
         #print(response.json())
 
     def get_users_features(self):
-        response = requests.get("http://localhost:8001/features")
+        response = requests.get("http://localhost:8002/start2")
         dicta = response.json()
         dict_mod = dicta["model"]
         for v in dict_mod.values():
@@ -68,9 +68,7 @@ class Client:
             return
 
     def clas(self):
-        #dict_str = json.dumps(self.dict_choise)
-        response = requests.post("http://localhost:8001/clas", json=self.dict_choise)
-        #response = requests.get(f"http://localhost:8001/clas?dict_choise={dict_str}")
+        response = requests.post("http://localhost:8002/clas", json=self.dict_choise)
         anser_json = response.json()
         anser_dict = anser_json["anser"]["result"]
         anser = anser_json["anser"]["class"]

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from fastapi import Request
-from server.maneser import Maneser
-import json
+#from fastapi import Request
+from model_server.maneser import Maneser
+#import json
 
 
 manser1 = Maneser()
@@ -43,22 +43,12 @@ def app_create_df(file:str):
                           "status": "error"
                 }
 
-@app.get('/features')
-def get_features():
+@app.get('/model_pas')
+def pas_model():
     try:
-        dict_model = manser1.dict_model
-        return {"model":dict_model}
-    except Exception as e:
-        return {"massege":f"error geting {e}",
-                          "status": "error"
+        return {"model":manser1.dict_model,
+                "priors":manser1.dict_priors,
                 }
-#@app.get('/clas')
-@app.post('/clas')
-async def classifier(request: Request):
-    try:
-        dict_choise = await request.json()
-        tar = manser1.get_from_user(dict_choise)
-        return {"anser":tar}
     except Exception as e:
         return {"massege":f"error geting {e}",
                           "status": "error"
