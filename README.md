@@ -11,12 +11,15 @@ The system returns prediction results with confidence percentages for each value
 
 ## How to Run???
 1. Build the Docker image using the Dockerfile:
-docker build -t classifier_image .
-
+```bash
+docker build -t naive_base:v1 . 
+```
 2. Run a container from the image:
-docker run -d -p 8000:8000 classifier_image
-
-3. Then you can access the server:
-Either run run_maneser from the client folder
-Or open the browser at: http://localhost:8000
-
+```bash
+docker run -d -p 8001:8001 --name my_naive naive_base:v1
+```
+# Access
+```bash
+run run_maneser from the client folder
+open the browser at: http://localhost:8001
+```
